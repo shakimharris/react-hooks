@@ -3,7 +3,7 @@ import React, { useState } from "react";
 function Three() {
   const [year, setYear] = useState("1995");
   const [type, setType] = useState("Mercedes");
-  const [used, setUsed] = useState("true");
+  const [used, setUsed] = useState("New Car");
 
   function Update() {
     setType("Benz");
