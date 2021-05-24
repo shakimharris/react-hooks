@@ -1,33 +1,28 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
-class Three extends Component {
-  state = {
-    year: 1995,
-    type: "Mercedes",
-    used: true
-  };
-  swapCar = () => {
-    this.setState({
-      year: 2018,
-      type: "BMW",
-      used: false
-    });
-  };
+function Three() {
+  const [year, setYear] = useState("1995");
+  const [type, setType] = useState("Mercedes");
+  const [used, setUsed] = useState("true");
 
-  render() {
-    return (
-      <div style={{ marginBottom: "50px" }}>
-        <h2>Challenge 3</h2>
-        <h3>Car Spec is:</h3>
-        <ul>
-          <li>{this.state.type}</li>
-          <li>{this.state.year}</li>
-          <li>{this.state.used ? "Used Car" : "Brand New!"}</li>
-        </ul>
-        <button onClick={this.swapCar}>Swap Car!</button>
-      </div>
-    );
+  function Update() {
+    setType("Benz");
+    setUsed("New Car");
+    setYear("2018");
   }
+
+  return (
+    <div style={{ marginBottom: "50px" }}>
+      <h2>Challenge 3</h2>
+      <h3>Car Spec is:</h3>
+      <ul>
+        <li>{type}</li>
+        <li>{year}</li>
+        <li>{used}</li>
+      </ul>
+      <button onClick={Update}>Swap Car!</button>
+    </div>
+  );
 }
 
 export default Three;
